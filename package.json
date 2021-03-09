@@ -1,24 +1,17 @@
 {
-  "name": "@adhemukhlis/react-ma-utility",
-  "version": "1.0.3",
-  "description": "react shorthand utility",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react",
-    "utility",
-    "shorthand",
-    "snipcode"
-  ],
-  "author": "adhemukhlis",
-  "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/adhemukhlis/react-ma-utility.git"
-  }
+	"name": "react-ma-utility",
+	"version": "1.0.6",
+	"description": "react shorthand utility",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"react",
+		"utility",
+		"shorthand",
+		"snipcode"
+	],
+	"author": "adhemukhlis",
+	"license": "ISC"
 }
