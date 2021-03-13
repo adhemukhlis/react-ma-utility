@@ -11,7 +11,18 @@ Kamu bebas menggunakan, menambahkan, ataupun memberi permintaan untuk fungsi ter
 - [Usage](#usage)
 - [API](#api)
     - [initGlobalUtility](#initglobalutility)  
-
+    - [promiseAll](#promiseall)  
+    - [isJsonString](#isjsonstring)  
+    - [idrCurrencyFormatter](#idrcurrencyformatter)  
+    - [idrCurrencyParser](#idrcurrencyparser)  
+    - [setSession](#setsession)  
+    - [getSession](#getsession)  
+    - [deleteSession](#deletesession)  
+    - [clearSession](#clearsession)  
+    - [setCookie](#setcookie)  
+    - [getCookie](#getcookie)  
+    - [cryptoRabbitEncrypt](#cryptorabbitencrypt)  
+    - [cryptoRabbitDecrypt](#cryptorabbitdecrypt)  
 ***
 
 ## Installation
@@ -48,7 +59,7 @@ Coba jalankan di [Stackblitz](https://stackblitz.com/edit/react-ma-utility-sampl
 
 ## API
 ### initGlobalUtility
-initGlobalUtility akan membuat fungsi/variable global yang dapat diakses bebas tanpa perlu adanya import dari per masing masing komponen
+`initGlobalUtility()` akan menginisiasi fungsi/variable global yang dapat diakses bebas tanpa perlu adanya import dari per masing masing komponen
 
 ```js
 // panggil di komponen root index.js
@@ -57,15 +68,52 @@ initGlobalUtility({ useDevStatus:true, useDevLog:true });
 
 
 console.log(window.devStatus); // true jika dalam development
-window.devLog('log ini tidak akan muncul setelah production!'); //dapat digunakan untuk meligat log saat develompment
+window.devLog('log ini tidak akan muncul setelah production!'); //dapat digunakan untuk melihat log saat develompment
 ```
 
 Attribute | Description | Value Type 
 --------|---------- | ----
-useDevStatus|variabel Boolean global yang berisi true pada saat development | Boolean
+
 useDevLog|serupa dengan console.log() tetapi hanya muncul saat development | Boolean
+useDevStatus|variabel Boolean global yang berisi true pada saat development | Boolean
+useLocalhostStatus|variabel Boolean global yang berisi true pada saat menggunakan localhost | Boolean
 
 Syntax | Attribute | Type 
 --------|---------- | ----
-`window.devStatus`|useDevStatus | Boolean
 `window.devLog()`|useDevLog| function
+`window.devStatus`|useDevStatus | Boolean
+`window.localhostStatus`|useLocalhostStatus | Boolean
+
+
+### promiseAll
+`promiseAll()` akan mengeksekusi multiple fungsi secara *asyncronous*
+
+```js
+function showLog(){
+  console.log('saya disini!');
+}
+promiseAll({funcList:[this.showLog,this.showLog,this.showLog]});
+```
+### isJsonString
+`isJsonString()` akan mengecek dan mengembalikan nilai `true` jika string merupakan objek yang berwujud string *(stringified JSON)*
+```js
+const stringifiedJson = '{name:"David",gender:"male",city:"Bekasi"}';
+isJsonString(stringifiedJson); //akan return true
+```
+### idrCurrencyFormatter
+```js
+idrCurrencyFormatter(64000); //akan return Rp 64000
+```
+### idrCurrencyParser
+```js
+idrCurrencyParser('Rp 64000'); //akan return 64000
+```
+### greeterWord
+### setSession
+### getSession
+### deleteSession
+### clearSession
+### setCookie
+### getCookie
+### cryptoRabbitEncrypt
+### cryptoRabbitDecrypt

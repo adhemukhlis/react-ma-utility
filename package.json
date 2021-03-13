@@ -1,6 +1,6 @@
 {
 	"name": "react-ma-utility",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "react shorthand utility",
 	"main": "index.js",
 	"scripts": {
@@ -12,6 +12,9 @@
 		"shorthand",
 		"snipcode"
 	],
+	"dependencies": {
+		"crypto-js": "^4.0.0"
+	},
 	"author": "adhemukhlis",
 	"license": "ISC"
 }
